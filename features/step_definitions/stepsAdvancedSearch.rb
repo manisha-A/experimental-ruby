@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rspec'
 require 'selenium-webdriver'
 
+printf(CHROMEDRIVER)
 Selenium::WebDriver::Chrome::Service.driver_path = CHROMEDRIVER
 options = Selenium::WebDriver::Chrome::Options.new
 # options.add_argument('--headless=new')
