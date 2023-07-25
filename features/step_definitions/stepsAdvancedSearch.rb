@@ -13,7 +13,6 @@ caps = Selenium::WebDriver::Remote::Capabilities.chrome
 
 driver = Selenium::WebDriver.for :chrome, options: options, capabilities: caps
 
-
 Given("open google advanced search") do
   driver.navigate.to "https://www.google.com/advanced_search?hl=en"         # direct to site
 end
