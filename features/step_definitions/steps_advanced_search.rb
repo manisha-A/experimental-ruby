@@ -15,7 +15,7 @@ Given("open google advanced search") do
   driver.navigate.to "https://www.google.com/advanced_search?hl=en"         # direct to site
 end
 
-Then("input title, languange, and time") do
+Then("input title, language, and time") do
   driver.find_element(:id, 'xX4UFf').send_keys 'Elon Musk'                # type elon musk in inpur form
   driver.find_element(:id,'lr_button').click                              # click dropdown language
   driver.find_element(:css,'.goog-menuitem[value="lang_id"]').click       # click and choose indonesian language
@@ -26,10 +26,9 @@ Then("input title, languange, and time") do
 end
 
 Then("validate result advanced search") do
-  # driver.find_element(:id,'L2AGLb').click
-  urlNya = driver.current_url
-  puts urlNya
-  expect(urlNya).to include('Elon+Musk')                                        # validate url include "Elon Musk"
+  urlCaptured = driver.current_url
+  puts urlCaptured
+  expect(urlCaptured).to include('Elon+Musk')                                        # validate url include "Elon Musk"
 
   # getTextForm = driver.find_element(:css, '.gLFyf.gsfi').attribute("value")
   # getTextForm = driver.find_element(:css, '.gLFyf').attribute("value")
