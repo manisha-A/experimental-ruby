@@ -23,4 +23,4 @@ jobs:
         echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
         ${{ steps.setup-chrome.outputs.chrome-path }} --version
     - name: Run tests
-      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=/usr/bin/chromedriver
+      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${{ steps.setup-chrome.outputs.chrome-path }}
