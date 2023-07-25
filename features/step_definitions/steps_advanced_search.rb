@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'rspec'
-require 'selenium-webdriver'
 
 Given("open google advanced search") do
   @driver.navigate.to "https://www.google.com/advanced_search?hl=en"         # direct to site
@@ -17,9 +16,9 @@ Then("input title, language, and time") do
 end
 
 Then("validate result advanced search") do
-  urlCaptured = @driver.current_url
-  puts urlCaptured
-  expect(urlCaptured).to include('Elon+Musk')                                        # validate url include "Elon Musk"
+  url_captured = @driver.current_url
+  puts url_captured
+  expect(url_captured).to include('Elon+Musk')                                        # validate url include "Elon Musk"
 
   # getTextForm = driver.find_element(:css, '.gLFyf.gsfi').attribute("value")
   # getTextForm = driver.find_element(:css, '.gLFyf').attribute("value")

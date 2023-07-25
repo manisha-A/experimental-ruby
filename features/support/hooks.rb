@@ -1,3 +1,5 @@
+require 'selenium-webdriver'
+
 Before do
   Selenium::WebDriver::Chrome::Service.driver_path = ENV['CHROMEDRIVER']
   options = Selenium::WebDriver::Chrome::Options.new
