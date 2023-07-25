@@ -14,6 +14,6 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
     - name: chrome
-      run: ls {{github_workspace}}
+      run: ls ${GITHUB_WORKSPACE}
     - name: Run tests
       run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER={{github_workspace}}/features/support/driver/chromedriver
