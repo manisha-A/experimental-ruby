@@ -2,31 +2,22 @@ require 'rubygems'
 require 'rspec'
 require 'selenium-webdriver'
 
-Selenium::WebDriver::Chrome::Service.driver_path = ENV['CHROMEDRIVER']
-options = Selenium::WebDriver::Chrome::Options.new
-options.add_argument('--headless=new')
-options.add_argument('--disable-gpu')
-
-caps = Selenium::WebDriver::Remote::Capabilities.chrome
-
-driver = Selenium::WebDriver.for :chrome, options: options, capabilities: caps
-
 Given("open google advanced search") do
-  driver.navigate.to "https://www.google.com/advanced_search?hl=en"         # direct to site
+  @driver.navigate.to "https://www.google.com/advanced_search?hl=en"         # direct to site
 end
 
 Then("input title, language, and time") do
-  driver.find_element(:id, 'xX4UFf').send_keys 'Elon Musk'                # type elon musk in inpur form
-  driver.find_element(:id,'lr_button').click                              # click dropdown language
-  driver.find_element(:css,'.goog-menuitem[value="lang_id"]').click       # click and choose indonesian language
-  driver.find_element(:id,'as_qdr_button').click                          # click dropdown time
-  driver.find_element(:css,'#as_qdr_menu [value="m"]').click              # click and choose time : past month
-  driver.find_element(:css,'[type="submit"]').click                       # click submit
+  @driver.find_element(:id, 'xX4UFf').send_keys 'Elon Musk'                # type elon musk in inpur form
+  @driver.find_element(:id,'lr_button').click                              # click dropdown language
+  @driver.find_element(:css,'.goog-menuitem[value="lang_id"]').click       # click and choose indonesian language
+  @driver.find_element(:id,'as_qdr_button').click                          # click dropdown time
+  @driver.find_element(:css,'#as_qdr_menu [value="m"]').click              # click and choose time : past month
+  @driver.find_element(:css,'[type="submit"]').click                       # click submit
   sleep(2)                                                                # sleep/pause 2 second
 end
 
 Then("validate result advanced search") do
-  urlCaptured = driver.current_url
+  urlCaptured = @driver.current_url
   puts urlCaptured
   expect(urlCaptured).to include('Elon+Musk')                                        # validate url include "Elon Musk"
 
