@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rspec'
 require 'selenium-webdriver'
 
-Selenium::WebDriver::Chrome::Service.driver_path = "features/support/driver/chromedriver"
+Selenium::WebDriver::Chrome::Service.driver_path = "./features/support/driver/chromedriver"
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_argument('--headless=new')
 options.add_argument('--disable-gpu')
