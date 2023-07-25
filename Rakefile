@@ -8,7 +8,7 @@ namespace :features do
     t.profile = "local" # Any valid command line option can go here.
   end
 
-  Cucumber::Rake::Task.new(:ci_tests) do
+  Cucumber::Rake::Task.new(:ci_tests) do |t|
     t.profile = "ci"
   end
 end
