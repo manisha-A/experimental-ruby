@@ -14,4 +14,4 @@ jobs:
         ruby-version: '2.6.10'
         bundler-cache: true
     - name: Run tests
-      run: rake features:ci_tests CHROMEDRIVER=${{ github.workspace }}/features/support/driver/chromedriver_linux/chromedriver --trace
+      run: bundle exec rake features:ci_tests CHROMEDRIVER=${{ github.workspace }}/features/support/driver/chromedriver_linux/chromedriver --trace
