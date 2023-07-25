@@ -3,8 +3,9 @@ require 'rspec'
 require 'selenium-webdriver'
 
 # Selenium::WebDriver::Chrome::Service.driver_path = "./features/support/driver/chromedriver"
-Selenium::WebDriver::Chrome::Service.driver_path = ENV['CHROMEDRIVER']
-printf(ENV['CHROMEDRIVER'])
+#
+Selenium::WebDriver::Chrome::Service.driver_path =ENV['CHROMEDRIVER']
+
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_argument('--headless=new')
 options.add_argument('--disable-gpu')
