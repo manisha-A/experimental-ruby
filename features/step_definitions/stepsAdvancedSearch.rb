@@ -26,7 +26,7 @@ Then("input title, languange, and time") do
 end
 
 Then("validate result advanced search") do
-  driver.find_element(:id,'L2AGLb').click
+  # driver.find_element(:id,'L2AGLb').click
   urlNya = driver.current_url
   puts urlNya
   expect(urlNya).to include('Elon+Musk')                                        # validate url include "Elon Musk"
