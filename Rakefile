@@ -1,7 +1,5 @@
-require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
-
 
 namespace :features do
   Cucumber::Rake::Task.new(:local_tests) do |t|
