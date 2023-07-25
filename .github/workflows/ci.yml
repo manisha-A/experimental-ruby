@@ -16,4 +16,4 @@ jobs:
     - name: chrome
       run: ls ${GITHUB_WORKSPACE}
     - name: Run tests
-      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER={{github_workspace}}/features/support/driver/chromedriver
+      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${GITHUB_WORKSPACE}/features/support/driver/chromedriver
