@@ -13,5 +13,7 @@ jobs:
       with:
         ruby-version: '3.0'
         bundler-cache: true
+    - name: chrome
+      run: ls
     - name: Run tests
       run: bundle exec cucumber --format summary --format html --out report.html
