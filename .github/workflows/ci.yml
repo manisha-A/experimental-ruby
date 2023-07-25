@@ -14,4 +14,4 @@ jobs:
         ruby-version: '2.6.10'
         bundler-cache: true
     - name: Run tests
-      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${GITHUB_WORKSPACE}/features/support/driver/chromedriver_linux/chromedriver
+      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${{ github.workspace }}/features/support/driver/chromedriver_linux/chromedriver
