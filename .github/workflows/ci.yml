@@ -7,9 +7,6 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: rubysetup
     steps:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
@@ -17,6 +14,6 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
     - name: chrome
-      run: pwd
+      run: ls {{github_workspace}}
     - name: Run tests
-      run: bundle exec cucumber --format summary --format html --out report.html
+      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER={{github_workspace}}/features/support/driver/chromedriver
