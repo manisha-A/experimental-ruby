@@ -20,7 +20,8 @@ jobs:
         chrome-version: beta
       id: setup-chrome
     - run: |
+        which chromedriver
         echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
         ${{ steps.setup-chrome.outputs.chrome-path }} --version
     - name: Run tests
-      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${{ steps.setup-chrome.outputs.chrome-path }}
+      run: bundle exec cucumber --format summary --format html --out report.html CHROMEDRIVER=${GITHUB_WORKSPACE}/chromedriver_linux/chromedriver
