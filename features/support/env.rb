@@ -1,5 +1,3 @@
-if ENV['CI'] == 'true'
-  CHROMEDRIVER=$GITHUB_WORKSPACE/features/support/driver/chromedriver_linux/chromedriver
-else
+if ENV['LOCAL'] == 'true'
   CHROMEDRIVER="./features/support/driver/chromedriver_mac/chromedriver"
 end
