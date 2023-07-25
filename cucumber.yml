@@ -1,2 +1,2 @@
-default:     --publish
+default:     --publish-quiet
 none:        --format pretty
